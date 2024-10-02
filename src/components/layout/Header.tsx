@@ -11,6 +11,7 @@ export default  function Header() {
 
     <nav className="bg-background border-gray-200 w-full px-4 py-3">
       <div className="flex justify-between items-center">
+
         {/* Menu & logo */}
         <div className="flex justify-center items-center gap-4">
           <Image
