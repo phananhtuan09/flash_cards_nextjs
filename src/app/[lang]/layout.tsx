@@ -7,6 +7,7 @@ import MobileHeader from "@/components/layout/MobileHeader";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
+
 // Define the RootLayout component
 export default function RootLayout({
   children,

@@ -1,14 +1,18 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function Header() {
+export default  function Header() {
   // State to control the dropdown visibility
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
+
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 w-full">
-      <div className="flex flex-wrap items-center justify-between p-4">
-        <div className="flex justify-center gap-4">
+
+
+    <nav className="bg-background border-gray-200 w-full px-4 py-3">
+      <div className="flex justify-between items-center">
+        {/* Menu & logo */}
+        <div className="flex justify-center items-center gap-4">
           <Image
             src="/assets/icons/menu.svg"
             alt="Menu"
@@ -29,7 +33,41 @@ export default function Header() {
           </a>
         </div>
 
-        <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        {/* Search */}
+        <div
+          className="i"
+          id="navbar-user"
+        >
+          <div className="relative">
+            <div className="">
+              <svg
+                className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+            </div>
+            <input
+              type="search"
+              id="default-search"
+              className=""
+              placeholder="Tìm kiếm câu hỏi"
+              required
+            />
+          </div>
+        </div>
+
+         {/* profile */}
+        <div className="">
           <button
             type="button"
             className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -96,37 +134,7 @@ export default function Header() {
             </div>
           )} */}
         </div>
-        <div
-          className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-          id="navbar-user"
-        >
-          <div className="relative">
-            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-              <svg
-                className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                />
-              </svg>
-            </div>
-            <input
-              type="search"
-              id="default-search"
-              className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Search Mockups, Logos..."
-              required
-            />
-          </div>
-        </div>
+        
       </div>
     </nav>
   );
