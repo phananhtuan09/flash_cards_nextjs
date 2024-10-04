@@ -1,8 +1,5 @@
 {
-    "layout": {
-      "header": {
-        "search_placeholder": "Search"
-      }
-     
-    }
+  "header": {
+    "search_placeholder_input": "Search"
   }
+}

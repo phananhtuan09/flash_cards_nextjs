@@ -1,17 +1,17 @@
 import { useState } from "react";
 import Image from "next/image";
+import { IDictionary } from "@/app/types/common";
 
-export default  function Header() {
-  // State to control the dropdown visibility
+interface IHeaderProps {
+  dict: IDictionary;
+}
+
+export default function Header({ dict }: IHeaderProps) {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
-
   return (
-
-
     <nav className="bg-background border-gray-200 w-full px-4 py-3">
       <div className="flex justify-between items-center">
-
         {/* Menu & logo */}
         <div className="flex justify-center items-center gap-4">
           <Image
@@ -35,10 +35,7 @@ export default  function Header() {
         </div>
 
         {/* Search */}
-        <div
-          className="i"
-          id="navbar-user"
-        >
+        <div className="i" id="navbar-user">
           <div className="relative">
             <div className="">
               <svg
@@ -61,20 +58,20 @@ export default  function Header() {
               type="search"
               id="default-search"
               className=""
-              placeholder="Tìm kiếm câu hỏi"
+              placeholder={dict.header.search_placeholder_input}
               required
             />
           </div>
         </div>
 
-         {/* profile */}
+        {/* Profile */}
         <div className="">
           <button
             type="button"
             className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
             id="user-menu-button"
             aria-expanded="false"
-            onClick={() => setDropdownOpen(!dropdownOpen)} // Toggle dropdown visibility
+            onClick={() => setDropdownOpen(!dropdownOpen)}
           >
             <span className="sr-only">Open user menu</span>
             <Image
@@ -135,7 +132,6 @@ export default  function Header() {
             </div>
           )} */}
         </div>
-        
       </div>
     </nav>
   );

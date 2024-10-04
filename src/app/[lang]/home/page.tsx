@@ -1,3 +1,3 @@
-export default  async function Home({ params: { lang: string } }) {
+export default function Home() {
   return <p>Home</p>;
 }

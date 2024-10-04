@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Define the Sidenav component
-export default function Sidenav({ sidebarOpen, setSidebarOpen }: any) {
+export default function SideNav({ sidebarOpen, setSidebarOpen }: any) {
   // Define state for sidebar expansion
   const [sidebarExpanded, setSidebarExpanded] = useState(false);
 

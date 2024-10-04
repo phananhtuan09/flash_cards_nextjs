@@ -1,8 +1,5 @@
 {
-    "layout": {
-      "header": {
-        "search_placeholder": "Tìm kiếm câu hỏi"
-      }
-     
-    }
+  "header": {
+    "search_placeholder_input": "Tìm kiếm câu hỏi"
   }
+}
